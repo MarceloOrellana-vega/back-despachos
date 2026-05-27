@@ -22,7 +22,9 @@ jobs:
       - name: Construir y subir imagen a Docker Hub
         uses: docker/build-push-action@v4
         with:
-          context: .
+          # Le indicamos la ruta exacta donde vive el Dockerfile de Despachos
+          context: ./Springboot-API-REST-DESPACHO
+          file: ./Springboot-API-REST-DESPACHO/Dockerfile
           push: true
-          # ¡Ojo aquí! Cambia el nombre de la imagen
           tags: marcelo1993/back-despachos:latest
+          
